@@ -5,5 +5,3 @@ src(s0)
     .modulate(noise(1, 0.05))
     .add(osc(14, 0.1, 1).kaleid(4))
     .out();
-
-solid().out();

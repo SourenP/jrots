@@ -1,4 +1,4 @@
-myp5.remove()
+// myp5.remove()
 
 NOTE_TO_LETTER = {
     0: 'Ա',
@@ -23,16 +23,16 @@ TEXT_SIZE = 200;
 DRAW_MARGIN = 800;
 
 myp5 = new P5((sketch) => {
-    function fontRead() {
-        font_ready = true;
-    }
-    sketch.preload = () => {
-        noto_sans_arm = sketch.loadFont('./assets/fonts/NotoSansArmenian-Bold.ttf', fontRead);
-    }
     sketch.setup = () => {
         sketch.createCanvas(window.innerWidth, window.innerHeight);
     }
 });
+
+// Load font
+function fontRead() {
+    font_ready = true;
+}
+noto_sans_arm = myp5.loadFont(atom.project.getPaths()[0] + '/assets/fonts/NotoSansArmenian-Bold.ttf', fontRead);
 
 myp5.pixelDensity(1);
 myp5.hide()
