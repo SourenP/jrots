@@ -1,5 +1,7 @@
 # jrots_atom
 
+![example](assets/images/jrots_example.png)
+
 ## Run
 
 1. Start [atom](https://atom.io/)
