@@ -1,28 +1,31 @@
-// myp5.remove()
+// p5.remove()
 
 NOTE_TO_LETTER = {
-    0: 'Ա',
-    1: 'Բ',
-    2: 'Գ',
-    3: 'Դ',
-    4: 'Ե',
-    5: 'Զ',
-    6: 'Է',
-    7: 'Ը',
-    8: 'Թ',
-    9: 'Ժ',
-    10: 'Ի',
-    11: 'Լ',
+    0: 'A',
+    1: 'B',
+    2: 'C',
+    3: 'D',
+    4: 'E',
+    5: 'F',
+    6: 'G',
+    7: 'H',
+    8: 'I',
+    9: 'J',
+    10: 'K',
+    11: 'L',
 }
 
 noto_sans_arm = false;
 font_ready = false;
 
 MIDI_ON_CMD = 144;
-TEXT_SIZE = 200;
-DRAW_MARGIN = 800;
+MIDI_OFF_CMD = 128;
 
-myp5 = new P5((sketch) => {
+TEXT_SIZE = 160;
+
+DRAW_MARGIN = 300;
+
+p5 = new P5((sketch) => {
     sketch.setup = () => {
         sketch.createCanvas(window.innerWidth, window.innerHeight);
     }
@@ -32,10 +35,10 @@ myp5 = new P5((sketch) => {
 function fontRead() {
     font_ready = true;
 }
-noto_sans_arm = myp5.loadFont(atom.project.getPaths()[0] + '/assets/fonts/NotoSansArmenian-Bold.ttf', fontRead);
+noto_sans_arm = p5.loadFont(atom.project.getPaths()[0] + '/assets/fonts/ots_v0.01.ttf', fontRead);
 
-myp5.pixelDensity(1);
-myp5.hide()
+p5.pixelDensity(1);
+p5.hide()
 
 letters = new Array(128);
 for (let i = 0; i < letters.length; i++) {
@@ -57,34 +60,34 @@ drawLetter = function (command, note, velocity) {
         return;
     }
 
-    myp5.draw = () => {
-        myp5.clear();
-        for (let i = 0; i < letters.length; i++) {
-            var letter = letters[i];
-            if (note === letter.note) {
-                if (command === MIDI_ON_CMD) {
-                    if (letter.display == false) {
-                        // TODO: Fix this formula.
-                        // Text size probably doesn't correspond to the width of the text.
-                        letter.position.x = (Math.random() * (myp5.canvas.width - DRAW_MARGIN)) + (DRAW_MARGIN / 2);
-                        letter.position.y = (Math.random() * (myp5.canvas.height - DRAW_MARGIN)) + (DRAW_MARGIN / 2);
-                        console.log(letter.position.x, );
-                    }
-                    letter.display = true;
-                } else {
-                    letter.display = false;
-                }
+    var letter = letters[note];
+    if (command === MIDI_ON_CMD) {
+        if (letter.display == false) {
+            // Reset letter to random position
+            letter.position.x = (Math.random() * (p5.canvas.width - DRAW_MARGIN)) + (DRAW_MARGIN / 2);
+            letter.position.y = (Math.random() * (p5.canvas.height - DRAW_MARGIN)) + (DRAW_MARGIN / 2);
+        }
+        letter.display = true;
+    } else if (command == MIDI_OFF_CMD) {
+        letter.display = false;
+    } else {
+        console.log("Unknown command");
+    }
+}
+
+p5.draw = () => {
+    p5.clear();
+    for (let i = 0; i < letters.length; i++) {
+        var letter = letters[i];
+        if (letter.display == true) {
+            if (font_ready) {
+                p5.textFont(noto_sans_arm);
             }
-            if (letter.display == true) {
-                if (font_ready) {
-                    myp5.textFont(noto_sans_arm);
-                }
-                myp5.textAlign('center', 'center');
-                myp5.textSize(TEXT_SIZE);
-                myp5.textStyle('bold');
-                myp5.text(letter.text, letter.position.x, letter.position.y);
-                myp5.fill(255, 255, 255);
-            }
+            p5.textAlign('center', 'center');
+            p5.textSize(TEXT_SIZE);
+            p5.textStyle('bold');
+            p5.text(letter.text, letter.position.x, letter.position.y);
+            p5.fill(255, 255, 255);
         }
     }
 }

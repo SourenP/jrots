@@ -1,7 +1,7 @@
-s0.init({src: myp5.canvas});
+s0.init({src: p5.canvas});
 
 src(s0)
-    .color([1,0,0],[0,1,0],[0,0,1])
+    .color(1,1,1)
     .modulate(noise(1, 0.05))
-    .add(osc(14, 0.1, 1).kaleid(4))
+    .diff(osc(12, 0.05, 1.1).rotate(0, 0.1).modulate(noise(4, 0.5, 12)))
     .out();
