@@ -1,6 +1,6 @@
 # jrots_atom
 
-![example](assets/images/jrots_example.png)
+![example](assets/images/jrots_example_2.png)
 
 ## Run
 
