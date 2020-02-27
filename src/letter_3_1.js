@@ -15,6 +15,8 @@ NOTE_TO_LETTER = {
 
 TEXT_SIZE = 100;
 
+MARGIN = 0.3;
+
 // Load font
 font = false;
 font_ready = false;
@@ -31,9 +33,9 @@ Letter = class Letter_CLASS extends VNote {
         this.text = NOTE_TO_LETTER[this.note % 12];
     }
 
-    reset(width, height, margin) {
-        let width_margin = width * margin;
-        let height_margin = height * margin;
+    reset(width, height) {
+        let width_margin = width * MARGIN;
+        let height_margin = height * MARGIN;
         this.position.x = (Math.random() * (width - width_margin)) + (width_margin / 2);
         this.position.y = (Math.random() * (height - height_margin)) + (height_margin / 2);
     }

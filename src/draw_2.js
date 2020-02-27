@@ -1,16 +1,42 @@
-// import VNote from "vnote.module.js";
-
 MIDI_ON_CMD = 144;
 MIDI_OFF_CMD = 128;
 
-MARGIN = 0.3;
+// Visual notes
+VNote = class VNote_CLASS {
+    constructor(note) {
+        this.note = note;
+        this.position = {
+            x: 0,
+            y: 0,
+        };
+        this.display = false;
+    }
+
+    reset(width, height) {
+        this.position.x = width / 2;
+        this.position.y = height / 2;
+    }
+
+    draw() {
+        if (this.display == true) {
+            p5.ellipse(this.position.x, this.position.y, 100, 100);
+            p5.fill(this.note * 2, 0, 0)
+        }
+    }
+
+    setDisplay(d) {
+        this.display = d;
+    }
+
+    getDisplay() {
+        return this.display;
+    }
+}
 
 vnotes = new Array(128);
 for (let i = 0; i < vnotes.length; i++) {
     vnotes[i] = new VNote(i);
 }
-
-// p5.remove()
 
 p5 = new P5((sketch) => {
     sketch.setup = () => {
