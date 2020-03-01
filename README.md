@@ -9,7 +9,8 @@
 2. Toggle hydra
  - packages > atom-hydra > toggle
 3. Open, select all and shift-enter these files in order:
- - `midi_1.js`
- - `draw_2.js`
- - `letter_3_1.js`
- - `hydra_4.js`
+  - `midi_1.js`
+  - `draw_2.js`
+  - `word_3.js` 
+  - `letter_4_1.js`
+  - `hydra_5.js`
