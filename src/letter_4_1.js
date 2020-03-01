@@ -14,17 +14,16 @@ NOTE_TO_LETTER = {
 }
 
 TEXT_SIZE = 100;
-
 MARGIN = 0.3;
 
 // Load font
 font = false;
 font_ready = false;
 
-function fontRead() {
-    font_ready = true;
-}
-font = p5.loadFont(atom.project.getPaths()[0] + '/assets/fonts/ots_v0.01.ttf', fontRead);
+font = p5.loadFont(
+    atom.project.getPaths()[0] + '/assets/fonts/ots_v0.01.ttf',
+    () => {font_ready = true;}
+);
 
 // Define Letters
 Letter = class Letter_CLASS extends VNote {
