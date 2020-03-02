@@ -50,4 +50,5 @@ p5.draw = () => {
     for (let i = 0; i < vnotes.length; i++) {
         vnotes[i].draw(p5);
     }
+
 }

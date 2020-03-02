@@ -31,18 +31,27 @@ Letter = class Letter_CLASS extends VNote {
     reset(width, height) {
         let width_margin = width * MARGIN;
         let height_margin = height * MARGIN;
-        this.position.x = (Math.random() * (width - width_margin)) + (width_margin / 2);
-        this.position.y = (Math.random() * (height - height_margin)) + (height_margin / 2);
+        this.position.x = (Math.random() * (width - width_margin)) +
+            (width_margin / 2);
+        this.position.y = (Math.random() * (height - height_margin)) +
+            (height_margin / 2);
+        this.color = '#FFFFFF';
     }
 
     draw(p5_inst) {
         if (this.display == true) {
+            p5_inst.fill(this.color);
             p5_inst.textFont(this.font);
             p5_inst.textAlign('center', 'center');
             p5_inst.textSize(TEXT_SIZE);
             p5_inst.textStyle('bold');
             p5_inst.text(this.text, this.position.x, this.position.y);
-            p5_inst.fill(255, 255, 255);
         }
     }
+}
+
+// Init
+for (let i = 0; i < vnotes.length; i++) {
+    vnotes[i] = new Letter(i);
+    vnotes[i].setFont("Arial");
 }
