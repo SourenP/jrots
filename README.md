@@ -10,6 +10,7 @@
 3. Toggle hydra
  - packages > atom-hydra > toggle
 4. Open files in `src/` in order, select all code and press `shift-enter` to execute.
-5. Livecode
+5. Livecode and play midi
  - edit hydra in `*_hydra.js`
  - edit constants in `*_config.js`.
+ - play midi notes
