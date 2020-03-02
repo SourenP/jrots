@@ -1,5 +1,11 @@
 # jrots_atom
 
+A livecode environment in atom that produces visuals from midi notes.
+
+For example: showing a letter each time a midi note is played.
+
+Based on [hydra](https://github.com/ojack/hydra) and web midi.
+
 ![example](assets/images/jrots_example_2.png)
 
 ## Run
