@@ -16,20 +16,16 @@ NOTE_TO_LETTER = {
 TEXT_SIZE = 100;
 MARGIN = 0.3;
 
-// Load font
-font = false;
-font_ready = false;
-
-font = p5.loadFont(
-    atom.project.getPaths()[0] + '/assets/fonts/ots_v0.01.ttf',
-    () => {font_ready = true;}
-);
-
 // Define Letters
 Letter = class Letter_CLASS extends VNote {
     constructor(note) {
         super(note);
         this.text = NOTE_TO_LETTER[this.note % 12];
+
+    }
+
+    setFont(font) {
+        this.font = font;
     }
 
     reset(width, height) {
@@ -39,20 +35,14 @@ Letter = class Letter_CLASS extends VNote {
         this.position.y = (Math.random() * (height - height_margin)) + (height_margin / 2);
     }
 
-    draw() {
+    draw(p5_inst) {
         if (this.display == true) {
-            if (font_ready) {
-                p5.textFont(font);
-            }
-            p5.textAlign('center', 'center');
-            p5.textSize(TEXT_SIZE);
-            p5.textStyle('bold');
-            p5.text(this.text, this.position.x, this.position.y);
-            p5.fill(255, 255, 255);
+            p5_inst.textFont(this.font);
+            p5_inst.textAlign('center', 'center');
+            p5_inst.textSize(TEXT_SIZE);
+            p5_inst.textStyle('bold');
+            p5_inst.text(this.text, this.position.x, this.position.y);
+            p5_inst.fill(255, 255, 255);
         }
     }
-}
-
-for (let i = 0; i < vnotes.length; i++) {
-    vnotes[i] = new Letter(i);
 }

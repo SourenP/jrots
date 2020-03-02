@@ -1,48 +1,21 @@
 MIDI_ON_CMD = 144;
 MIDI_OFF_CMD = 128;
 
-// Visual notes
-VNote = class VNote_CLASS {
-    constructor(note) {
-        this.note = note;
-        this.position = {
-            x: 0,
-            y: 0,
-        };
-        this.display = false;
-    }
-
-    reset(width, height) {
-        this.position.x = width / 2;
-        this.position.y = height / 2;
-    }
-
-    draw() {
-        if (this.display == true) {
-            p5.ellipse(this.position.x, this.position.y, 100, 100);
-            p5.fill(this.note * 2, 0, 0)
-        }
-    }
-
-    setDisplay(d) {
-        this.display = d;
-    }
-
-    getDisplay() {
-        return this.display;
-    }
-}
-
-vnotes = new Array(128);
-for (let i = 0; i < vnotes.length; i++) {
-    vnotes[i] = new VNote(i);
-}
-
 // Init p5
 p5 = new P5((sketch) => {
     sketch.setup = () => {
         sketch.createCanvas(window.innerWidth, window.innerHeight);
     }
+});
+
+noto_am_font = p5.loadFont(atom.project.getPaths()[0] + '/assets/fonts/NotoSansArmenian-Bold.ttf', () => {
+    console.log("noto_am_font font loaded.")
+});
+ots_am_font = p5.loadFont(atom.project.getPaths()[0] + '/assets/fonts/ots_v0.01.ttf', () => {
+    console.log("ots_am_font font loaded.")
+});
+open_en_font = p5.loadFont(atom.project.getPaths()[0] + '/assets/fonts/OpenSans-Bold.ttf', () => {
+    console.log("open_en_font font loaded.")
 });
 
 p5.pixelDensity(1);

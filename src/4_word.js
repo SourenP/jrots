@@ -25,7 +25,7 @@ assignWords = function(letters) {
     });
 
     // Replace letters with word
-    for(let i = 0; i < displayed_letters.length; i++) {
+    for (let i = 0; i < displayed_letters.length; i++) {
         displayed_letters[i].text = word[i];
     }
 }
