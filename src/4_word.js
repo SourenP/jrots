@@ -55,19 +55,19 @@ assignWords = function(letters) {
         return;
     }
 
-    groupless_letters = displayed_letters;
+    // Assume all letters don't aren't parts of words
+    wordless_letters = displayed_letters;
 
     // Sort to be in left to right order horizontally
-    groupless_letters.sort(function(a, b) {
+    wordless_letters.sort(function(a, b) {
         return a.position.x - b.position.x;
     });
 
-    // Assign groups to groupless letters
-    var word_length = groupless_letters.length;
-    while (groupless_letters.length > 0 && word_length > 0) {
+    // Assign words to wordless letters
+    var word_length = wordless_letters.length;
+    while (wordless_letters.length > 0 && word_length > 0) {
         if (WORD_LENGTH_TO_WORD[word_length] === undefined ||
-            WORD_LENGTH_TO_WORD[word_length].length === 0 ||
-            groupless_letters.length < word_length) {
+            WORD_LENGTH_TO_WORD[word_length].length === 0) {
             word_length--;
             continue;
         } else {
@@ -75,12 +75,13 @@ assignWords = function(letters) {
             word_color = getColor(word.split('')
                 .reduce((acc, c) => acc + c.charCodeAt(0), 0));
             for (let i = 0; i < word_length; i++) {
-                groupless_letter = groupless_letters[i];
-                groupless_letter.text = word[i];
-                groupless_letter.color = word_color;
+                wordless_letter = wordless_letters[i];
+                wordless_letter.text = word[i];
+                wordless_letter.color = word_color;
             }
-            groupless_letters.splice(0, word_length)
-            word_length = groupless_letters.length
+            wordless_letters.splice(0, word_length)
+            word_length = wordless_letters.length
         }
     }
+
 }

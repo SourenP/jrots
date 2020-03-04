@@ -50,11 +50,11 @@ MARGIN = 0.3;
 WORD_LENGTH_TO_WORD = {
     1: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
     2: ["ON", "UP", "DO", "GO", "YO", "HI"],
-    3: ["THE", "OFF"],
-    4: [],
-    5: [],
-    6: ["CENTER"],
-    7: ["RECURSE"]
+    3: ["CAT", "DOG", "RAT", "OWL", "FOX"],
+    4: ["BIRD", "BEAR", "DEER", "FISH", "WOLF", "GOAT"],
+    5: ["HORSE", "WHALE", "SNAKE", "OTTER", "EAGLE"],
+    6: ["BEAVER", "MOUSE", "LIZARD", "MONKEY", "TIGER"],
+    7: ["DOLPHIN"]
 }
 
 // WORD_LENGTH_TO_WORD = {
@@ -62,3 +62,9 @@ WORD_LENGTH_TO_WORD = {
 //     2: ["ԲԱ"],
 //     3: ["ԳԱԼ"]
 // }
+
+// COLOR_PALETTE = ['#4F37A6', '#035AA6', '#03A678', '#F2AE2E', '#F23D3D']; // colorful
+
+// COLOR_PALETTE = ['#000000'] // black
+
+COLOR_PALETTE = ['#FFFFFF'] // white

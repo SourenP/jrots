@@ -1,4 +1,5 @@
-navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
+navigator.requestMIDIAccess()
+    .then(onMIDISuccess, onMIDIFailure);
 
 function onMIDISuccess(midiAccess) {
     console.log(midiAccess);
