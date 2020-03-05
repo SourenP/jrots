@@ -1,4 +1,4 @@
-# jrots_atom
+# jrots
 
 A livecode environment in atom based on [hydra](https://github.com/ojack/hydra) and [p5](https://p5js.org/) that produces visuals with letters and words from midi input.
 
