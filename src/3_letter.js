@@ -21,7 +21,6 @@ Letter = class Letter_CLASS extends VNote {
     constructor(note) {
         super(note);
         this.text = NOTE_TO_LETTER[this.note % 12];
-
     }
 
     setFont(font) {
@@ -36,6 +35,7 @@ Letter = class Letter_CLASS extends VNote {
         this.position.y = (Math.random() * (height - height_margin)) +
             (height_margin / 2);
         this.color = '#FFFFFF';
+        this.text = NOTE_TO_LETTER[this.note % 12];
     }
 
     draw(p5_inst) {

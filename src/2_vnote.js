@@ -33,4 +33,5 @@ VNote = class VNote_CLASS {
 vnotes = new Array(128);
 for (let i = 0; i < vnotes.length; i++) {
     vnotes[i] = new VNote(i);
+
 }

@@ -15,7 +15,7 @@ function onMIDIFailure() {
 }
 
 drawMidi = function(command, note, velocity) {
-    console.debug('Draw midi ' + command + ' ' + note + ' ' + velocity);
+    console.log('Draw midi ' + command + ' ' + note + ' ' + velocity);
 }
 
 getMIDIMessage = function(midiMessage) {
@@ -24,7 +24,7 @@ getMIDIMessage = function(midiMessage) {
     var note = arr[1];
     var velocity = arr[2];
 
-    console.debug('Midi received ' + command + ' ' + note + ' ' + velocity);
+    console.log('Midi received ' + command + ' ' + note + ' ' + velocity);
 
     drawMidi(command, note, velocity);
 }
