@@ -1,11 +1,11 @@
 WORD_LENGTH_TO_WORD = {
     1: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
     2: ["ON", "UP", "DO", "GO", "YO", "HI"],
-    3: ["THE", "OFF"],
-    4: [],
-    5: [],
-    6: ["CENTER"],
-    7: ["RECURSE"]
+    3: ["CAT"],
+    4: ["BIRD", "BEAR", "DEER", "FISH", "WOLF", "GOAT"],
+    5: ["HORSE", "WHALE", "SNAKE", "OTTER", "EAGLE"],
+    6: ["BEAVER", "MOUSE", "LIZARD", "MONKEY", "TIGER"],
+    7: ["DOLPHIN"]
 }
 
 COLOR_PALETTE = ['#4F37A6', '#035AA6', '#03A678', '#F2AE2E', '#F23D3D'];

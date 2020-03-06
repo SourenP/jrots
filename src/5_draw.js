@@ -1,3 +1,5 @@
+ASSIGN_WORDS = true;
+
 MIDI_ON_CMD = 144;
 MIDI_OFF_CMD = 128;
 
@@ -43,7 +45,9 @@ drawMidi = function(command, note, velocity) {
     }
 
     // Assign words
-    assignWords(vnotes);
+    if (ASSIGN_WORDS) {
+        assignWords(vnotes);
+    }
 }
 
 // p5 draw loop

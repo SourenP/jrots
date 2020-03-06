@@ -47,10 +47,12 @@ TEXT_SIZE = 100;
 MARGIN = 0.3;
 
 /* Word */
+ASSIGN_WORDS = true;
+
 WORD_LENGTH_TO_WORD = {
     1: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
     2: ["ON", "UP", "DO", "GO", "YO", "HI"],
-    3: ["CAT", "DOG", "RAT", "OWL", "FOX"],
+    3: ["CAT"],
     4: ["BIRD", "BEAR", "DEER", "FISH", "WOLF", "GOAT"],
     5: ["HORSE", "WHALE", "SNAKE", "OTTER", "EAGLE"],
     6: ["BEAVER", "MOUSE", "LIZARD", "MONKEY", "TIGER"],
@@ -58,9 +60,24 @@ WORD_LENGTH_TO_WORD = {
 }
 
 // WORD_LENGTH_TO_WORD = {
-//     1: ["Ա", "Բ", "Գ"],
-//     2: ["ԲԱ"],
-//     3: ["ԳԱԼ"]
+//     1: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
+//     2: ["AT"],
+//     3: ["THE"],
+//     4: [],
+//     5: [],
+//     6: ["CENTER"],
+//     7: ["RECURSE"]
+// }
+
+// WORD_LENGTH_TO_WORD = {
+//     1: 'ԱԲԳԴԵԶԷԸԹԺԻԼԽԾԿՀՁՂՃՄՅՆՇՈՉՊՋՌՍՎՏՐՑՒՓՔՕՖ'.split(''),
+//     2: [],
+//     3: ["ԿԱԹ", "ՀԱՑ"],
+//     4: ["ՍՊԱՍ", "ՁՈՒԿ"],
+//     5: ["ՊԱՆԻՐ", "ԱՊՈՒՐ", "ՏՈԼՄԱ", "ՄԱՆԴԻ", "ԼԱՎԱՇ"],
+//     6: ["ՄԱԾՈԻՆ", "ՀԱՎԿԻԹ", "ԲՅՈՐԵԿ", "ՏԺՎԺԻԿ"],
+//     7: [],
+//     8: ["ՄԱՏՆԱՔԱՇ"],
 // }
 
 // COLOR_PALETTE = ['#4F37A6', '#035AA6', '#03A678', '#F2AE2E', '#F23D3D']; // colorful
