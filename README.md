@@ -19,6 +19,8 @@ A livecode environment in atom based on [hydra](https://github.com/ojack/hydra) 
 
 ## Todo
 
+- [ ] Produce mock midi input via keyboard
+  - [ ] Sample sound for midi input
 - [ ] Record a demo video.
 - [ ] When one note/letter is removed from a displayed word, consider *not* changing the remainder into a new word.
   - This will probably require keeping track of the list of words displayed and having rules around when a complete/partial word can be replaced by a new one.
